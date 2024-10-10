@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background: linear-gradient(135deg, #4e54c8, #8f94fb); */
+}
+body{
+    /* background-color:#1E3A8A; */
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+}
+.container{
+    height: 100vh;
+    /* width: 400px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.table{
+    background-color:#F7F7F7;
+    height:300px;
+    width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+   
+}
+
+form input{
+    margin: 10px;
+    padding: 5px;
+    
+   
+}
+form button{
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 150px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 2px;
+    border: none;
+    background: rgb(108, 108, 222);
+    color:#ffffff;
+}
+form [type = "file"]{
+    width: 150px;
+    display: none;
+}
+.upload{
+    width: 150px;
+    margin-top: 10px;
+    border: 1px black solid;
+    color:rgb(121, 73, 14);
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 2px;
+
+}
+input, label, button {
+    font-family: inherit; /* Reset to default */
+    box-shadow: none;     /* Remove Bootstrap's shadow */
+    border-radius: 0;     /* Remove border radius from input */
+}
+.custom-form input {
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+}

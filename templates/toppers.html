@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Toppers List</title>
+    <style>
+        /* Style the container */
+        .container {
+            margin-top: 50px;
+        }
+
+        /* Style the heading */
+        h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Style the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        /* Style table headers */
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        /* Style table rows */
+        td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        /* Style for alternating row colors */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Add hover effect for rows */
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        /* Style the "No students found" message */
+        .no-records {
+            text-align: center;
+            font-size: 18px;
+            color: #ff0000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Toppers for the subject: {{ subject }}</h3>
+
+        {% if toppers.empty %}
+            <p class="no-records">No students found matching the criteria.</p>
+        {% else %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for topper in toppers.itertuples() %}
+                        <tr>
+                            <td>{{ topper.FirstName }}</td>
+                            <td>{{ topper.LastName }}</td>
+                            <td>{{ topper.PercentCorrect }}%</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+</body>
+</html>
