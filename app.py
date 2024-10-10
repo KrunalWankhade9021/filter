@@ -28,5 +28,6 @@ def upload_file():
     # Pass the toppers and subject to the template
     return render_template('toppers.html', toppers=toppers, subject=subject)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# The app is automatically started by Vercel serverless environment.
+# If you were running this locally, you would still use app.run(), but Vercel handles this.
+
